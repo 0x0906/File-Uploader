@@ -1,0 +1,406 @@
+:root{
+    --primary-bg-color:  rgb(33, 35, 40);
+    --secondary-bg-color: rgb(27, 29, 33);
+    --box-bg-color: rgb(36, 40, 48);
+    --primary-fg-color: white;
+    --secondary-fg-color: silver;
+    --button-color:  rgb(68, 103, 190);
+    --button-shade-color:  rgb(56, 82, 147);
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    scroll-behavior: smooth;
+}
+
+body{ 
+    background-color: var(--primary-bg-color);  
+    font-style: normal;
+    position: relative;
+}
+
+
+.container{
+    height:  100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.info{
+    margin-bottom: 1rem;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.info h2{
+    color: var(--primary-fg-color);
+}
+
+.info h4{
+    color: var(--secondary-fg-color);
+}
+
+.glow{
+    animation: gloweffect 2s ease-in-out;
+}
+
+@keyframes gloweffect {
+    0%{
+        color: white;
+    }
+    10%, 90% {
+        color: rgb(250, 101, 101);
+    }
+    100%{
+        color: white;
+    }
+}
+
+.upload-container{
+    width: 340px;
+    height: 265px;
+    background-color: var(--secondary-bg-color);
+    border: 1px white dashed;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.upload-container h4{
+    margin-top: 2rem;
+    color: var(--primary-fg-color);
+}
+
+.upload-container .upload-img{
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.upload-container span{
+    cursor: pointer;
+    color: var(--button-color);
+    text-decoration: underline;
+}
+
+.file-info-container{
+    position: relative;
+    display: none;
+    background-color: var(--box-bg-color);
+    width: 255px;
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+    height: 120px;
+    padding: 0.85rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.close-btn{
+    position: absolute;
+    padding: 0px 3px;
+    top: 0;
+    right: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 122, 122);
+}
+
+.file-info{
+    margin-top: 6px;
+    overflow: hidden;
+    line-height: 1.5rem;
+    display: flex;
+    gap: 0.4rem;
+}
+
+.scroll-text{
+    width: 150px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scroll-text::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.file-info .file-info-lbl{
+    color: var(--secondary-fg-color);
+    cursor: default;
+    text-decoration: none;
+}
+
+.file-info .file-info-val{
+    color: var(--primary-fg-color);
+    cursor: text;
+    font-size: small;
+    text-decoration: none;
+}
+
+.upload-btn{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--button-color);
+    border: 1px var(--button-color) solid;
+    border-radius: 10px;
+    width: 250px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.upload-btn span{
+    text-decoration: none;
+    color: white;
+    font-size: large;   
+}
+
+.upload-btn .upload-btn-text{ 
+    position: absolute;
+    z-index: 1;
+}
+
+.upload-btn .upload-btn-progress{
+    position: absolute;
+    border-color: inherit;
+    background-color: inherit;
+    height: 100%;
+    width: 100%;
+    left: 0;
+}
+
+.upload-btn-text, h1, h2, h3, h4, h5, h6, a, .upload-img, img, .close-btn, .coded-by, .response-text, .response-copy-btn, .response-goback-btn
+{
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+.response-container{
+    display: none;
+    width: 300px;
+    height: 395px;
+    background-color: var(--secondary-bg-color);
+    border: 1px white dashed;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+}
+
+.response-text{
+    color: rgb(43, 182, 115);
+}
+.response-server-container{
+    width: 100%;
+    height: 110px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    background-color: black;
+    padding: 1rem;
+}
+
+
+.response-server-message{
+    color: white;
+    word-wrap: break-word;
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style:normal;
+    font-size: small;
+    height: 80px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.response-copy-btn{
+    cursor: pointer;
+    margin-top: 1rem;
+    color: white;
+    background-color: var(--button-color);
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.response-goback-btn{
+    cursor: pointer;
+    margin-top: 1rem;
+    color: white;
+    background-color: var(--button-color);
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.response-goback-btn:hover, .response-copy-btn:hover, .upload-btn:hover{
+    background-color: var(--button-shade-color);
+}
+
+.coded-by{
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-size: small;
+    color: yellow;
+    margin-top: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: rgb(38, 38, 38);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--button-color);
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: var(--button-shade-color);
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.708);
+    align-items: center;
+    justify-content: center;
+}
+
+.pop{
+    height: calc(100% - 20%);
+    width: calc(100% - 20%);
+    background-color: var(--primary-bg-color);
+    border: 1px solid var(--box-bg-color);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+
+.title{
+    color: white;
+    padding-bottom: 1rem;
+}
+
+.caption{
+    height: calc(100% - 21%);
+    overflow: scroll;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    color: white;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-size: small;
+}
+
+.btns{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.ok{
+    width: 100px;
+    padding: 0.5rem;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(58, 133, 58);
+    cursor: pointer;
+}
+
+.cancel{
+    width: 100px;
+    padding: 0.5rem;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(133, 58, 58);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px)  {
+    .container{
+        margin: 0 1rem;
+    }
+    .pop{
+        height: calc(100% - 30%);
+    }
+    .upload-container {
+        width: 270px;
+        height: 200px;
+    }
+    .upload-container h4{
+        margin-top: 1.5rem;
+        font-size: small;
+        margin-bottom: 0;
+    }
+    .upload-container .upload-img {
+        width: 65px;
+        height: 64px;
+        margin-top: 0.7rem;
+    }
+    .upload-btn{
+        margin-top: 0rem;
+        height: 40px;
+        width: 210px;
+    }
+    .upload-btn .upload-btn-text{
+        font-size: small;
+    }
+    .response-server-container{
+        height: 100px;
+    }
+    .response-server-container div{
+        height: 65px;
+    }
+    .response-container{
+        padding: 0.5rem 1rem;
+        height: 380px;
+        width: 280px;
+    }
+    .response-goback-btn, .response-copy-btn{
+        height: 40px;
+        font-size: small;
+    }
+    .file-info-container{
+        width: 210px;
+    }
+    .scroll-text{
+        width: 115px;
+    }
+    .coded-by{
+        font-size: small;
+    }   
+}

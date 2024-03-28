@@ -87,8 +87,7 @@
     
     <div class="container">
         <div class="info">
-            <h2><span id="notify">Upload a file up to 20 MB</span> and get a direct download link</h4>
-            <h4>Your file is only available for one month from when you uploaded it</h6>
+            <h2><span id="notify">Upload a file up to 20 MB</span> and get a direct download link</h2>
             </div>
 
         <div class="response-container">
